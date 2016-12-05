@@ -4,6 +4,8 @@ resources :posts do
   resources :comments
 end
  
-root 'welcome#index'
+resources :users
+ 
+root 'users#index'
 
 end
