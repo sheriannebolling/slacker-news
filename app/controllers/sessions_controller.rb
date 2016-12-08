@@ -5,9 +5,10 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:session][:username]).try(:authenticate, params[:session][:password])
+    @posts = Post.all
     if @user 
       session[:user_id] = @user.id
-      render 'users/show'
+      render 'posts/index'
     else
       @errors = ["Username/password combination is incorrect"]
       render 'new'
