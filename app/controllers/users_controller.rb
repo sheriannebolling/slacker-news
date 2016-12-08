@@ -5,9 +5,10 @@ class UsersController < ActionController::Base
 
   def create
     @user = User.new(user_params)
+    @posts = Post.all
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      render 'posts/index'
     else
       render 'new'
     end

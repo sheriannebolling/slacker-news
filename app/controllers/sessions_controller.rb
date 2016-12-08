@@ -14,4 +14,14 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
+
+  def show
+
+  end
+
+  def destroy
+    reset_session
+    # session.clear
+    redirect_to root_path
+  end
 end
