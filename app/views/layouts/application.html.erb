@@ -3,12 +3,26 @@
   <head>
     <title>SlackerNews</title>
     <%= csrf_meta_tags %>
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+  <nav>
+  <ul>  
+   <!--  <% if logged_in? %>
+      <li class="pipe-separate"><%=current_user.username%></li>
+      <li class="pipe-separate"><a href="/">home</a></li>
+      <li class="pipe-separate"><a href="/sessions">logout</a></li>
+    <% else %>
+      <li class="pipe-separate"><a href="/">home</a></li>
+      <li class="pipe-separate"><a href="/users/new">register</a></li>
+      <li class="pipe-separate"><a href="/sessions/new">login</a></li>
+    <% end %> -->
+  </ul>
+</nav>
     <%= yield %>
   </body>
 </html>
